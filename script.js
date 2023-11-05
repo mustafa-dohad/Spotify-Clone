@@ -4,60 +4,65 @@ let audioElement = new Audio("songs/1.mp3");
 let masterPlay = document.getElementById("masterplay");
 let myProgressBar = document.getElementById("myProgressBar");
 let gif = document.getElementById("gif");
+let songItems = Array.from(document.getElementById('songItems'));
 
 let songs = [
   {
-    songName: "Let Me Love You",
+    songName: "Warriyo - Mortals (feat. Laura Brehm) [NCS Release]",
     filePath: "songs/1.mp3",
     coverPath: "covers/1.jpg",
   },
   {
-    songName: "Let Me Love You",
+    songName: "Cielo - Huma Huma",
     filePath: "songs/2.mp3",
     coverPath: "covers/2.jpg",
   },
   {
-    songName: "Let Me Love You",
+    songName: "DEAF KEV - Invincible [NCS Release] - 320k",
     filePath: "songs/3.mp3",
     coverPath: "covers/3.jpg",
   },
   {
-    songName: "Let Me Love You",
+    songName: "Different Heaven & EH!DE - My Heart [NCS Release] - 320k",
     filePath: "songs/4.mp3",
     coverPath: "covers/4.jpg",
   },
   {
-    songName: "Let Me Love You",
+    songName: "Salam-e-Ishq",
     filePath: "songs/5.mp3",
     coverPath: "covers/5.jpg",
   },
   {
-    songName: "Let Me Love You",
+    songName: "Rabba - Salam-e-Ishq",
     filePath: "songs/6.mp3",
     coverPath: "covers/6.jpg",
   },
   {
-    songName: "Let Me Love You",
+    songName: "Sakhiyaan",
     filePath: "songs/7.mp3",
     coverPath: "covers/7.jpg",
   },
   {
-    songName: "Let Me Love You",
+    songName: "Bhula Dena",
     filePath: "songs/8.mp3",
     coverPath: "covers/8.jpg",
   },
   {
-    songName: "Let Me Love You",
+    songName: "Tumhari Kasam",
     filePath: "songs/9.mp3",
     coverPath: "covers/9.jpg",
   },
   {
-    songName: "Let Me Love You",
+    songName: "Na Jaana",
     filePath: "songs/10.mp3",
     coverPath: "covers/10.jpg",
   },
 ];
 
+songItems.forEach((element, i) => {
+  element.getElementByTagName("img")[0].src= songs[i].coverPath;
+  element.getElementByClassName("songName")[0].innerText = songs[i].songName;
+});
 // Handle play/pause click
 masterPlay.addEventListener("click", () => {
   if (audioElement.paused || audioElement.currentTime <= 0) {
